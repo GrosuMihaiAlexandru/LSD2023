@@ -1,0 +1,275 @@
+<p><span style="font-size: 2.34375rem;">Introducere. Funcții în Python</span></p>
+
+<h2><strong>1. Despre Python</strong></h2>
+<p><span class="" style="font-size: x-large;">Generalități</span></p>
+
+<p><a href="https://docs.python.org/3/">Python</a> este un limbaj de programare <strong>interpretat</strong>, <strong>dinamic</strong> și <strong>de nivel înalt</strong>. Acesta suportă paradigme multiple de programare cum ar fi:&nbsp;</p>
+<p></p>
+<ul>
+    <li><span><span style="font-size: 0.9375rem;">programarea procedurală;</span><span style="font-size: 0.9375rem;">&nbsp;</span></span></li>
+    <li><span style="font-size: 0.9375rem;">programarea orientată pe obiecte;</span></li>
+    <li><span><span style="font-size: 0.9375rem;">programarea funcțională</span><span style="font-size: 0.9375rem;">.</span></span></li>
+</ul>
+<p></p>
+<p>Un <em>interpretor</em> poate rula (evalua) fragmente de program (expresii sau instrucțiuni) pe măsură ce ele sunt introduse. <br>Un <em>compilator</em> transformă programul <em>sursă</em> într-un fișier <em>executabil</em> care poate fi apoi executat de sine stătător.</p>
+
+<h2><span class="" style="font-size: x-large;"><strong>Mediul de lucru</strong></span></h2>
+
+<p>Odată ce scriem exemple de program e util să le salvăm pentru a le putea refolosi. Programele Python se scriu în fișiere text cu extensia <tt>.py</tt> . Ele se pot edita cu orice <em>editor de texte</em> (de exemplu Notepad++, <strong><em>nu</em> </strong>Word care editează fișiere <tt>.doc</tt> cu formatare specifică). Aceste programe salvate in fișiere <tt>.py</tt> se rulează din linia de comandă (cmd/terminal) cu comanda <tt>python3 fisier.py</tt></p>
+
+<p>Pentru a simplifica procesul putem folosi un IDE (Integrated Development Environment). Un IDE este un program care de obicei conține cel puțin 3 lucruri: editor de cod, compilator si debugger. Un astfel de IDE este IDLE. Acesta se poate instala foarte usor de pe <tt>python.org</tt> din sectiunea Downloads. Trebuie descărcat și rulat fișierul de instalare corespunzător sistemului de operare, după care veți putea folosi python atât din linia de comandă cât și din IDLE.</p>
+
+<h2><span class="" style="font-size: x-large;"><strong>IDLE</strong></span></h2>
+
+<p>La deschiderea programului IDLE ne întâmpină o fereastră numită <tt>IDLE Shell</tt>. Interpretorul rulează în această fereastră. Aici putem rula fragmente de cod. În cazul în care dorim să scriem programe într-un fișier pe care îl putem salva și ulterior rula, putem apăsa <em>File-&gt;New File</em> pentru a deschide altă fereastră. Aici putem scrie cod care poate fi salvat într-un fișier. Pentru a compila și rula un program se apasă <em>Run-&gt;Run Module</em> sau tasta F5.</p>
+
+<p>Fișierele folosite recent pot fi accesate ușor de la <em>File-&gt;Recent Files</em>.</p>
+
+<p>Pentru a naviga în istoricul comenzilor din interpretor putem folosi:</p>
+
+<ul>
+
+    <li>Alt-p : comanda anterioară</li>
+
+    <li>Alt-n : comanda următoare</li>
+
+</ul>
+
+<h2><strong><br></strong></h2>
+<h2><strong>2. Python - Noțiuni fundamentale</strong></h2>
+
+<h3><span class="" style="font-size: x-large;"><strong><span class="" style="font-size: x-large;">Evaluarea unor expresii</span></strong></span></h3>
+
+<p>La prompterul <em>&gt;&gt;&gt;</em> al interpretorului putem în general <span><strong><span>evalua expresii</span></strong></span>. Cele mai simple expresii sunt calculele cu numere, scrise în notația obișnuită din matematică. De exemplu, putem introduce:</p>
+
+<pre>&gt;&gt;&gt; 2+3
+</pre>
+
+<p>iar interpretorul răspunde:</p>
+
+<pre>5
+</pre>
+
+<p>În cadrul primului chenar&nbsp;<tt>&gt;&gt;&gt;</tt>&nbsp;reprezintă prompterul interpretorului (deci el nu trebuie introdus), iar în cel de-al doilea chenar, fără prompter, se găsește răspunsul dat de interpretor, și anume 5.</p>
+
+<p>Spațiile în cadrul expresiei nu contează, putem scrie și:</p>
+
+<pre>&gt;&gt;&gt; 2 + 3 </pre>
+<p>Pe lângă operația de adunare, există și operații de scădere (-), înmulțire (*), împărțire (/), modulo (%) și ridicare la putere(**).<br></p>
+<p><span class="" style="font-size: x-large;">Tipuri de date</span></p>
+<p><span class="" style="font-size: x-large;"></span></p>
+<p>Python pune la dispozitie 4 tipuri de date primitive:</p>
+<ul>
+    <li>Integer</li>
+    <li>Float</li>
+    <li>String</li>
+    <li>Boolean</li>
+</ul>
+<p>Tipurile de date primitive sunt imutabile, adică, odată ce acestea au fost create ele nu se mai pot modifica. Dacă o variabilă x = 3 își modifică valoarea în 4, de fapt un nou întreg este creat și atribuit variabilei x. Nu putem face:</p>
+<pre>&gt;&gt;&gt; 2 = 5
+    SyntaxError: cannot assign to literal here. Maybe you meant '==' instead of '='?</pre>
+<h3><span class="" style="font-size: large;"><strong>1. Integer</strong></span></h3>
+<p>Tipul de date<strong> integer (int)</strong> reprezintă datele numerice cu sau fără semn, fără zecimale și de lungime nelimitată (numere întregi cu valori cuprinse între -∞ și ∞).</p>
+<pre> Ex: 3, 6, -234.</pre>
+<h3><span class="" style="font-size: large;"><strong>2. Float</strong></span></h3>
+<p>Tipul de date<strong> float</strong> este folosit pentru reprezentarea numerelor în virgulă flotantă, cu sau fără semn.</p>
+<pre>Ex: 3.34, -0.123456. </pre>
+<p><strong>! Atenție&nbsp;</strong>2 e o valoare întreagă. Pentru o valoare reală (float) trebuie să scriem 2.0 (sau prescurtat 2.). În Python conversia de tip de la int la float se face automat. Astfel, rezultatul operațiilor ce conțin atât numere întregi cât și numere reale va fi un număr real (de exemplu 5 + 2.0 va da 7.0).</p>
+<p>Putem folosi și funcția float() dacă dorim să facem o conversie în mod explicit:</p>
+<pre>&gt;&gt;&gt; float (3 * 2)
+    6.0
+</pre>
+<h3><span class="" style="font-size: large;"><strong>3. String</strong></span></h3>
+<p>Un<strong> string </strong>(șir de caractere) reprezintă o colecție de caractere, cuvinte sau fraze. Pentru a crea un string în Python, folosim semnele&nbsp;<tt>''</tt>&nbsp;(apostrof) sau&nbsp;<tt>""</tt>&nbsp;(ghilimele). Exemplu:&nbsp;<tt>'carte'&nbsp;</tt>,&nbsp;<tt>"23abc"</tt>.<br>Asupra unui șir de caractere putem efectua diverse operații. Una din cele mai comune operații este concaterarea șirurilor de caractere. Aceasta se face prin operatorul + :</p>
+<pre>&gt;&gt;&gt; 'abc' + 'def'
+    'abcdef'
+</pre>
+<p>Caracterele dintr-un string se pot accesa direct prin&nbsp;<tt>"string"[index]</tt>:</p>
+<pre>&gt;&gt;&gt; 'A string'[2]
+    's'
+</pre>
+<p>Rezultatul este al treilea caracter (numerotarea caracterelor începe de la 0). Python permite și accesarea de caractere folosind valori negative pentru index. Pentru exemplul de mai jos, selectarea oricărui alt întreg care se află în afara intervalului [-8; 7] va genera o excepție:</p>
+<p></p>
+<pre>'A' ' ' 's' 't' 'r' 'i' 'n' 'g' 
+ 0   1   2   3   4   5   6   7
+-8  -7  -6  -5  -4  -3  -2  -1</pre>
+<p><strong></strong></p>
+<pre><span>&gt;&gt;&gt; 'A string'[-8]
+    'A'</span></pre>
+<p><strong>! Atenție</strong> Deoarece Python este un limbaj de programare <strong>strongly typed</strong>, în cazul în care doriți să realizați operații matematice cu șirurile de caractere ce conțin valori numerice conversia nu se va face automat, ci va trebui să o faceți folosind una din funcțiile int() sau float().&nbsp;</p>
+<p></p>
+<pre>&gt;&gt;&gt; 5 + int('2')
+    7</pre>
+<p>Pentru mai multe operații ce pot fi aplicate șirurilor de caractere (precum conversia unui string la lowercase/uppercase, împărțirea unui string, înlocuirea unui anumit caracter dintr-un string, etc.) puteți consulta <a href="https://www.w3schools.com/python/python_ref_string.asp" target="_blank">pagina</a>.</p>
+<h3><span class="" style="font-size: large;"><strong>4. Boolean</strong></span></h3>
+<p>Tipul de date<strong> boolean</strong> reprezintă valoarea de adevăr a unei expresii. Acesta poate avea valorile&nbsp;<em>True</em> sau <em>False</em>. De obicei, un boolean se folosește în scrierea condițiilor sau în compararea unor expresii.</p>
+<pre>&gt;&gt;&gt; 3 == 4
+    False
+</pre>
+<p>Folosind operatorii de comparație <em>==</em> (egal), <span>!</span><em>=</em> (diferit), <em>&gt;</em> (mai mare), <em>&lt;</em> (mai mic),<em> &gt;=</em> (mai mare sau egal), <em>&lt;=</em> (mai mic sau egal), putem face comparații între diferite expresii.</p>
+<p>Pentru a scrie condiții mai complicate puteți folosi cuvintele cheie <strong>and</strong>, <strong>or</strong> și <strong>not</strong>.&nbsp;</p>
+<p>Atunci când folosiți and, dacă cei doi operanzi au valoarea logică True, atunci rezultatul final va fi True. Dacă cel puțin un operand e False, întreaga expresie va fi evaluată ca fiind False.</p>
+<pre>&gt;&gt;&gt; 3 == (2 + 1) and (3 + 1) != (2 ** 2)
+    False</pre>
+<p></p>
+<p>În cazul operatorului logic or, este suficient ca măcar unul din cei doi operanzi să fie adevărat pentru ca expresia rezultată să fie adevărată. Dacă cei doi operanzi sunt False, atunci și rezultatul expresiei va fi tot False.</p>
+<p></p>
+<pre>&gt;&gt;&gt; 3 == (2 + 1) or (3 + 1) != (2 ** 2)
+    True</pre>
+<p>Operatorul logic not se aplică pentru un singur operand. Dacă acesta are valoarea True, atunci rezultatul final va fi false. Dacă operandul are valoarea False, atunci rezultatul final va fi True.</p>
+<p></p>
+<pre>&gt;&gt;&gt; not (3 + 1) != (2 ** 2)
+    True</pre>Pe lângă aceste tipuri de date fundamentale, Python mai oferă 4 tipuri predefinite pentru a putea reține colecțiile de date. Astfel, în Python putem lucra cu următoarele:<br>
+<ul>
+    <li>Listă&nbsp;</li>
+    <li>Tuplu</li>
+    <li>Mulțime (Set)</li>
+    <li>Dicționar&nbsp;</li>
+</ul>
+<p>În continuare prezentăm doar modul de definire al <span>tipurilor de date </span><strong>listă </strong>și<strong> tuplu&nbsp;</strong>în Python (mai multe detalii despre aceste tipuri, dar și despre celelalte două, vor fi prezentate în cadrul laboratoarelor viitoare). Astfel dacă dorim să definim o listă vom enumera între paranteze pătrate elementele acesteia, elementele fiind despărțite între ele prin virgulă:</p>
+<p></p>
+<pre>Exemplu: even_digits_list = [0, 2, 4, 6, 8]</pre>Dacă dorim să accesăm un element al listei procedăm la fel ca și în cazul șirurilor de caractere (Exemplu: dacă dorim să accesăm elementul 2 din lista <em>evenDigits</em> vom scrie <em>evenDigits[1]</em>, numerotarea făcându-se și în acest caz de la 0).<br><br>În mod asemănător listelor, putem defini un <strong>tuplu </strong>folosind paranteze rotunde:&nbsp;<br>
+<pre>Exemplu: even_digits_tuple = (0, 2, 4, 6, 8)</pre>
+<h2><span class="" style="font-size: x-large;"><strong>Tipărirea</strong></span></h2>
+<p>Până acum ne-am folosit de faptul că interpretorul afișează automat rezultatul unei evaluări. Pentru a scrie și rula programe de sine stătătoare sunt însă necesare funcții care să tipărească valori.<br>Python dispune de funcția print(), ce poate fi folosită pentru a tipări pe ecran diverse mesaje sau tipuri de date ce vor fi convertite în string. Caracterul de linie nouă se reprezintă ca în C:&nbsp;<tt>'\n'</tt>.<br>Putem trece la linie nouă apelând&nbsp;<tt>print('\n')</tt>.</p>
+<p>Funcția print() acceptă un număr variabil de parametri. Astfel, putem tipări diferite șiruri de caractere în felul următor:</p>
+<pre>&gt;&gt;&gt; print("Hello.", "How are you?")
+    Hello. How are you?
+</pre>
+<p>De asemenea, putem specifica un separator între șirurile de caractere printate, prin atribuirea unui șir de caractere parametrului&nbsp;<tt>sep&nbsp;</tt>al funcției print:</p>
+<pre>&gt;&gt;&gt; print("Hello.", "How are you?", sep="\n-----\n")
+    Hello.
+    -----
+    How are you?
+</pre>
+<p>Putem folosi funcția() print și într-un mod asemănător funcției printf din C, în felul următor:</p>
+<pre>&gt;&gt;&gt; print("Result: %d + %.2f = %.2f" % (2, 3.25, 2 + 3.25))
+    Result: 2 + 3.25 = 5.25</pre>
+<p><span style="font-size: x-large;">Structura condițională</span></p>
+<p>În mod implicit, codul din Python se execută secvențial, linie cu linie, însă pot exista situații în care o instrucțiune să fie executată doar dacă o anumită condiție este îndeplinită. Pentru a realiza acest lucru putem utiliza următoarea structură:<br></p>
+<p><span style="font-size: x-large;"></span></p>
+<pre>if condition_1:
+   instruction_block_1
+elif condition_2:
+   instruction_block_2
+else:
+   instruction_block_3
+</pre>Observații<br>
+<ul>
+    <li>pot exista oricât de multe ramuri elif;</li>
+    <li>ramură elif poate lipsi complet din cadrul structurii;</li>
+    <li>ramura de else este opțională (poate apărea o dată sau deloc).</li>
+</ul><span style="font-size: 0.9375rem;">Exemplu:</span><br>
+
+<span style="font-size: 0.9375rem;">
+    <pre>if (x &lt; 0):
+    print("x &lt; 0")
+elif (x &lt;= 1):
+    print("0 &lt;= x &lt;= 1")
+else:
+    print("x &gt; 1")</pre>
+</span>
+<h3><span class="" style="font-size: medium;"><strong>În cadrul exemplului de mai sus se verifică dacă variabila x este mai mică decât 0, caz în care se tipărește "x&lt;0". Dacă x este mai mare sau egal cu 0 (adică prima condiție nu este verificată), se va verifica condiția de pe ramura elif, și anume dacă x este mai mic sau egal cu 1. În cazul în care nici această condiție nu este verificată (adica x este mai mare decât 1) se va executa instrucțiunea corespunzătoare ramurii else.</strong></span></h3>
+<p><span class="" style="font-size: medium;"><strong><br></strong></span></p>
+<h3><span class="" style="font-size: x-large;"><span><span><strong>Particularități de sintaxă</strong></span></span></span></h3>
+<p><span class="" style="font-size: large;">1. Indentarea</span></p>
+<p>În Python, indentarea este foarte importantă în scrierea codului. Spre deosebire de alte limbaje de programare ce folosesc acolade { }, în Python indentarea este folosită pentru blocurile de cod. Indentarea este întotdeauna precedată de semnul&nbsp;<strong>:</strong>&nbsp;(două puncte).&nbsp;<br></p>
+<p><span class="" style="font-size: large;">2. Comentarii</span></p>
+<p>Comentariile sunt folosite pentru a explica porțiuni de cod. În Python comentariile încep cu simbolul #:</p>
+<p></p>
+<pre>#This is a single line comment.</pre>De asemenea comentariile pot fi plasate și la finalul unei linii:<br>
+<pre>print("Python") #This is another example.</pre>In cazul în care comentariul se întinde pe mai multe rânduri, fiecare linie poate să înceapă cu # sau putem opta pentru utilizarea&nbsp;""" (3 ghilimele la începutul comentariului și 3 ghilimele la sfârșitul acestuia):<br>
+<pre>"""This is <br> a<br> multiline comment""" <br> print(5 + 2)</pre>
+<p><span><span class="" style="font-size: x-large;">Introducerea de cod extern (Module)</span></span></p>
+<p></p>
+<p>La fel ca și in alte limbaje de programare și în Python se pot introduce funcții și constante din alte fișiere. Un exemplu util în acest sens este dat de includerea modulului math (puteți consulta&nbsp;<a href="https://docs.python.org/3/library/math.html" target="_blank">documentația oficială</a>&nbsp;pentru mai multe informații despre constantele și funcțiile pe care le pune la dispoziție).</p>
+<pre>&gt;&gt;&gt; import math
+</pre>
+<p>&nbsp;Pentru a folosi acum funcții precum floor sau ceil:</p>
+<pre>&gt;&gt;&gt; math.floor(3.7)
+    3
+&gt;&gt;&gt; math.ceil(3.7)
+    4
+</pre>
+<p>Daca dorim să redenumim modulul importat putem folosi:</p>
+<pre>&gt;&gt;&gt; import math as m
+</pre>
+<p>Acum putem folosi funcțiile apelând:</p>
+<pre>&gt;&gt;&gt; m.floor(3.7)
+    3
+</pre>
+<p><strong>Observație!</strong> Funcția&nbsp;<tt>int()</tt>&nbsp;poate fi folosită pentru a trunchia partea fracționară.</p>
+<h2><strong><br></strong></h2>
+<h2><strong>3.Programarea funcțională</strong></h2>
+<p>În programarea funcțională, programele sunt construite prin aplicarea și compunerea funcțiilor. Spre deosebire de programarea procedurală, unde se folosesc secvențe de instrucțiuni ce modifică starea programului, programarea funcțională se bazează pe evaluarea funcțiilor matematice, evitând astfel starea și datele mutabile.</p>
+<p>Deși Python ne permite lucrul direct cu date și modificarea lor, pentru a programa funcțional este foarte important să nu scriem funcții ce modifică starea globală a programului, în momentul apelării lor.</p><br>
+<p></p>
+<h3><span class="" style="font-size: xx-large;"><strong>4.Funcții în Python</strong></span></h3>
+<h3><span class="" style="font-size: x-large;"><strong>Definire</strong></span></h3>
+<p>În Python funcțiile se definesc cu ajutorul cuvântului cheie <strong>def</strong>. După cuvântul cheie, este trecut numele funcției, urmat de paranteze rotunde unde se pun parametri acesteia separați prin virgulă, iar la final este adăugat și simbolul :(două puncte). Daca funcția nu are niciun parametru, nu veți pune nimic între paranteze, însă prezența acestora este obligatorie.</p>
+<p><strong>Observație!</strong> Nu uitați să indentați <u>întreg</u> corpul funcției!</p>
+<p></p>
+<pre>def function_name(param_1, param_2, param_3, ..., param_n):
+    #some_instructions</pre>
+<p>Astfel, funcția <em>f : <strong>ℤ</strong> → <strong>ℤ</strong></em>, <em>f(x) = x + 3</em> se scrie în Python:</p>
+
+<pre>def f(x):
+    return x + 3
+</pre>
+
+<p>Putem defini funcția și cu ajutorul interpetatorului:</p>
+
+<pre>&gt;&gt;&gt; def f(x):
+...	return x + 3
+...
+</pre>
+
+<p>Apasăm de doua ori enter pentru a semnala interpretorului că am terminat de scris codul. Funcția va rămâne definită în memorie până la închiderea interpretorului.&nbsp;<span style="font-size: 0.9375rem;">Prompterul ... al interpretorului ne indică faptul că pe următoarea linie se continuă codul.</span></p>
+
+<p><span class="" style="font-size: x-large;"><span><span class="" style="font-size: x-large;">Apelarea funcțiilor</span><strong>&nbsp;</strong></span></span></p>
+<p>Odată definită funcția, aceasta se apelează în felul următor:</p>
+
+<pre>&gt;&gt;&gt; f(1)
+    4
+</pre>
+
+<p>Când apelăm o funcție putem să specificăm și numele parametrului la apel:</p>
+
+<pre>&gt;&gt;&gt; f(x=5)
+    8
+</pre>
+
+<p>Putem da funcției și o expresie complexă ca parametru:</p>
+
+<pre>&gt;&gt;&gt; f(2*3)
+    9</pre>
+
+<h2><span style="font-size: x-large;" class=""><strong>Funcții cu mai mulți parametri</strong></span></h2>
+<p><span style="font-size: 0.9375rem;">Fie funcția din matematică:&nbsp;</span><em style="font-size: 0.9375rem;">integer_add:&nbsp;<strong>ℤ</strong>×<strong>ℤ</strong>&nbsp;→&nbsp;<strong>ℤ</strong></em><span style="font-size: 0.9375rem;">,&nbsp;</span><em style="font-size: 0.9375rem;">integer_add(x, y) = x + y</em></p>
+<p>Varianta cea mai uzuală de a transcrie această funcție într-un program Python este:</p>
+<pre>def integer_add(x, y):
+     return x + y</pre>
+<p></p>
+<h2><span style="font-size: 1.875rem;">
+        <h3><span class="" style="font-size: x-large;"><strong>Funcții care returnează mai multe valori</strong></span></h3>
+        <p><strong><span class="" style="font-size: medium;">În Python putem implementa funcții care returnează mai multe valori cu ajutorul listelor. De exemplu, dacă dorim să implementăm funcția f:&nbsp;</span><span><span class="" style="font-size: medium;">ℤ</span></span><span class="" style="font-size: medium;">×</span><span><span class="" style="font-size: medium;">ℤ</span></span><span class="" style="font-size: medium;">&nbsp;→&nbsp;</span><span><span class="" style="font-size: medium;">ℤ</span></span><span class="" style="font-size: medium;">×</span><span><span class="" style="font-size: medium;">ℤ</span></span><span class="" style="font-size: medium;">,&nbsp;</span><em><span class="" style="font-size: medium;">f(x, y) = [x + y, x - y]</span></em><span class="" style="font-size: medium;">&nbsp;putem scrie astfel:</span></strong></p>
+        <pre>def f(x, y):
+    return [x + y, x - y]</pre>
+    </span></h2>
+<h2><span class="" style="font-size: x-large;"><span><span style=""><span class="" style="font-size: large;">O altă modalitate prin care putem scrie astfel de funcții este prin folosirea tipului de date Tuplu:</span></span><br></span></span></h2>
+<p><span class="" style="font-size: x-large;"><span><span style=""><span class="" style="font-size: large;"></span></span></span></span></p>
+<pre>def f(x, y):
+    return x + y, x - y</pre>Exemplu de apelare:
+<pre>result_1, result_2 = f(2, 1)<br></pre>
+<h2><span class="" style="font-size: x-large;"><strong>Exemplu</strong></span></h2>
+
+<p>În programarea funcțională dorim să evaluăm expresii, nu să executăm o serie de instrucțiuni. Astfel, valoarea returnată de către o funcție se va folosi ca parametru de către altă funcție.&nbsp;</p>
+<p>Totuși, în exemplul de mai jos, deși se execută print() în interiorul unei funcții, acest apel nu afectează starea sistemului.&nbsp;</p>
+
+<pre>def print_abs(x):
+    if (x &gt; 0):
+        print("Positive: " + str(x))
+        return x
+    else:
+        print("Negative: " + str(x))
+        return -x</pre>
